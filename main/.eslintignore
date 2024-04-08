@@ -1,0 +1,14 @@
+*.sh
+*.md
+*.woff
+*.ttf
+*.yaml
+.vscode
+.idea
+node_modules
+dist
+public
+docs
+.husky
+.eslintrc.js
+.vscode/setting.josn
