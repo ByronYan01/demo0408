@@ -36,6 +36,7 @@ microApp.start({
           console.log("global processHtml==url====", url);
           console.log("global processHtml==options====", options);
           const regex = /<title>(.*?)<\/title>/g;
+
           // 在第一个匹配到的 <title> 前插入 <script></script>
           const res = code.replace(regex, function (match) {
             return (
@@ -43,13 +44,14 @@ microApp.start({
             debugger;
             window.frameElement.contentWindow.Vue = window.rawWindow.Vue;
             window.frameElement.contentWindow.VueDemi = window.rawWindow.VueDemi;
-            window.frameElement.contentWindow.VueRouter = window.rawWindow.VueRouter;
+            window.frameElement.contentWindow.axios = window.rawWindow.axios;
             window.frameElement.contentWindow.ElementPlus = window.rawWindow.ElementPlus;
             window.frameElement.contentWindow.ElementPlusIconsVue = window.rawWindow.ElementPlusIconsVue;
             window.frameElement.contentWindow.Pinia = window.rawWindow.Pinia;
             </script>` + match
             );
           });
+          // window.frameElement.contentWindow.VueRouter = window.rawWindow.VueRouter;
           console.log("sssss====", res);
 
           return res;

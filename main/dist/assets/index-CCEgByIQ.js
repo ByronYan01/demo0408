@@ -8363,11 +8363,11 @@ microApp.start({
   plugins: {
     global: [
       {
-        // excludeChecker(url: string) {
-        //   console.log("excludeChecker url====", url);
-        //   console.log("excludeChecker url=includes===", url.includes("other"));
-        //   return url.includes("other");
-        // },
+        excludeChecker(url) {
+          console.log("excludeChecker url====", url);
+          console.log("excludeChecker url=includes===", url.includes("other"));
+          return url.includes("other");
+        },
         // loader(code: any, url: any) {
         //   console.log("global loader==code====", code);
         //   console.log("global loader==url====", url);
@@ -8386,7 +8386,7 @@ microApp.start({
             debugger;
             window.frameElement.contentWindow.Vue = window.rawWindow.Vue;
             window.frameElement.contentWindow.VueDemi = window.rawWindow.VueDemi;
-            window.frameElement.contentWindow.VueRouter = window.rawWindow.VueRouter;
+            window.frameElement.contentWindow.axios = window.rawWindow.axios;
             window.frameElement.contentWindow.ElementPlus = window.rawWindow.ElementPlus;
             window.frameElement.contentWindow.ElementPlusIconsVue = window.rawWindow.ElementPlusIconsVue;
             window.frameElement.contentWindow.Pinia = window.rawWindow.Pinia;
