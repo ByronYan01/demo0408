@@ -52,16 +52,21 @@ export default defineConfig({
           var: "VueDemi",
           path: "js"
         },
+        // {
+        //   name: "vue-router",
+        //   var: "VueRouter",
+        //   path: "global.js"
+        // },
         {
-          name: "vue-router",
-          var: "VueRouter",
-          path: "global.js"
+          name: "axios",
+          var: "axios",
+          path: "js"
         },
         {
           name: "element-plus",
           var: "ElementPlus",
-          path: "js"
-          // css: "2.6.1/dist/index.css"
+          path: "js",
+          css: "css"
         },
         {
           name: "@element-plus/icons-vue",

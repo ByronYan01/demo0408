@@ -2,7 +2,7 @@
 
 <template>
   <div id="demoView">
-    <el-button>aaa</el-button>
+    <router-view></router-view>
   </div>
 </template>
 

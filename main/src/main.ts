@@ -19,36 +19,37 @@ microApp.start({
       {
         excludeChecker(url: string) {
           console.log("excludeChecker url====", url);
-          return false;
+          console.log("excludeChecker url=includes===", url.includes("other"));
+          return url.includes("other");
         },
-        loader(code: any, url: any) {
-          console.log("global loader==code====", code);
-          console.log("global loader==url====", url);
+        // loader(code: any, url: any) {
+        //   console.log("global loader==code====", code);
+        //   console.log("global loader==url====", url);
 
-          if ((url || "").indexOf("/xxx/antd.min.js") >= 0) {
-            return `window.antd = antd;`;
-          }
-          return code;
-        },
+        //   if ((url || "").indexOf("/xxx/antd.min.js") >= 0) {
+        //     return `window.antd = antd;`;
+        //   }
+        //   return code;
+        // },
         processHtml(code: string, url: string, options: unknown) {
           console.log("global processHtml==code====", code);
           console.log("global processHtml==url====", url);
           console.log("global processHtml==options====", options);
-          const res = code.replace(
-            "<title>子应用child</title>",
-            `
-            <script>
+          const regex = /<title>(.*?)<\/title>/g;
+          // 在第一个匹配到的 <title> 前插入 <script></script>
+          const res = code.replace(regex, function (match) {
+            return (
+              `<script>
             debugger;
-            window.Vue = window.rawWindow.Vue;
-            window.VueDemi = window.rawWindow.VueDemi;
-            window.VueRouter = window.rawWindow.VueRouter;
-            window.ElementPlus = window.rawWindow.ElementPlus;
-            window.ElementPlusIconsVue = window.rawWindow.ElementPlusIconsVue;
-            window.Pinia = window.rawWindow.Pinia;
-            </script>
-          <title>子应用child</title>
-          `
-          );
+            window.frameElement.contentWindow.Vue = window.rawWindow.Vue;
+            window.frameElement.contentWindow.VueDemi = window.rawWindow.VueDemi;
+            window.frameElement.contentWindow.VueRouter = window.rawWindow.VueRouter;
+            window.frameElement.contentWindow.ElementPlus = window.rawWindow.ElementPlus;
+            window.frameElement.contentWindow.ElementPlusIconsVue = window.rawWindow.ElementPlusIconsVue;
+            window.frameElement.contentWindow.Pinia = window.rawWindow.Pinia;
+            </script>` + match
+            );
+          });
           console.log("sssss====", res);
 
           return res;

@@ -1,9 +1,10 @@
 <template>
   <div style="width: 100%; height: 100%">
     <micro-app
-      name="chatAll"
+      name="child"
       :url="appUrl"
       style="width: 100%; height: 100%"
+      default-page="/home/test"
       iframe
       @created="createdFuc"
     ></micro-app>

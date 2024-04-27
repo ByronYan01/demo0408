@@ -4,11 +4,15 @@
   const loadChild = async () => {
     await router.push("/child");
   };
+  const skip = async () => {
+    await router.push("/other");
+  };
 </script>
 
 <template>
   <section id="app">
     <el-button @click="loadChild">加载子应用</el-button>
+    <el-button @click="skip">调整other</el-button>
     <router-view></router-view>
   </section>
 </template>

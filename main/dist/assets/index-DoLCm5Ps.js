@@ -14,9 +14,10 @@ const _sfc_main = /* @__PURE__ */ Vue.defineComponent({
       const _component_micro_app = Vue.resolveComponent("micro-app");
       return Vue.openBlock(), Vue.createElementBlock("div", _hoisted_1, [
         Vue.createVNode(_component_micro_app, {
-          name: "chatAll",
+          name: "child",
           url: Vue.unref(appUrl),
           style: { "width": "100%", "height": "100%" },
+          "default-page": "/home/test",
           iframe: "",
           onCreated: createdFuc
         }, null, 8, ["url"])
