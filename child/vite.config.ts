@@ -26,7 +26,21 @@ export default defineConfig({
     // 启用混淆，减少模块体积
     minify: false,
     // 小于4096KB得引用资源将转为Base64，减少额外得HTTP请求
-    assetsInlineLimit: 4096
+    assetsInlineLimit: 4096,
+    rollupOptions: {
+      output: {
+        //   chunkFileNames: "js/[name]-[hash].js", // 引入文件名的名称
+        //   entryFileNames: "js/[name]-[hash].js", // 包的入口文件名称
+        //   assetFileNames: "[ext]/[name]-[hash].[ext]", // 资源文件像 字体，图片等
+        // 最小化拆分包
+        manualChunks: (id) => {
+          if (id.includes("node_modules")) {
+            const moduleName = id.toString().split("node_modules/")[1].split("/")[0].toString();
+            return moduleName;
+          }
+        }
+      }
+    }
     // rollupOptions: {
     //   // 确保外部化处理那些你不想打包进库的依赖
     //   external: [

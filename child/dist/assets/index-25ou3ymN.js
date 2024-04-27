@@ -1,4 +1,5 @@
-import { _ as _export_sfc } from './index-loFQQncJ.js';
+import { _ as _export_sfc } from './index-_k_aeNsA.js';
+import './vue-router-NfWjSH4I.js';
 
 const _sfc_main = {};
 
