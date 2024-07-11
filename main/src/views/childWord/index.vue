@@ -4,7 +4,7 @@
       name="child"
       :url="appUrl"
       style="width: 100%; height: 100%"
-      default-page="#/home/test"
+      default-page="#/home/wordPreview"
       iframe
       @created="createdFuc"
     ></micro-app>

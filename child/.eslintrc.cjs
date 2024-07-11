@@ -38,6 +38,8 @@ module.exports = {
     "@typescript-eslint/no-empty-interface": "off",
     "@typescript-eslint/promise-function-async": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-floating-promises": "off",
+    "@typescript-eslint/no-unsafe-argument": "off",
     "@typescript-eslint/strict-boolean-expressions": "warn"
   }
 };
