@@ -17,7 +17,7 @@ const _sfc_main = /* @__PURE__ */ Vue.defineComponent({
           name: "child",
           url: Vue.unref(appUrl),
           style: { "width": "100%", "height": "100%" },
-          "default-page": "/home/test",
+          "default-page": "#/home/test",
           iframe: "",
           onCreated: createdFuc
         }, null, 8, ["url"])

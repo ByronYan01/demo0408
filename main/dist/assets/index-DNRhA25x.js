@@ -59,6 +59,9 @@ const _sfc_main = /* @__PURE__ */ Vue.defineComponent({
     const loadChild = async () => {
       await router.push("/child");
     };
+    const loadChildWord = async () => {
+      await router.push("/childWord");
+    };
     const skip = async () => {
       await router.push("/other");
     };
@@ -66,6 +69,12 @@ const _sfc_main = /* @__PURE__ */ Vue.defineComponent({
       const _component_el_button = Vue.resolveComponent("el-button");
       const _component_router_view = Vue.resolveComponent("router-view");
       return Vue.openBlock(), Vue.createElementBlock("section", _hoisted_1, [
+        Vue.createVNode(_component_el_button, { onClick: loadChildWord }, {
+          default: Vue.withCtx(() => [
+            Vue.createTextVNode("加载子应用预览word")
+          ]),
+          _: 1
+        }),
         Vue.createVNode(_component_el_button, { onClick: loadChild }, {
           default: Vue.withCtx(() => [
             Vue.createTextVNode("加载子应用")
@@ -159,7 +168,12 @@ const routers = [
   {
     path: "/child",
     name: "child",
-    component: async () => await __vitePreload(() => import('./index-DoLCm5Ps.js'),true?__vite__mapDeps([]):void 0,import.meta.url)
+    component: async () => await __vitePreload(() => import('./index-CtuF38Xz.js'),true?__vite__mapDeps([]):void 0,import.meta.url)
+  },
+  {
+    path: "/childWord",
+    name: "childWord",
+    component: async () => await __vitePreload(() => import('./index-B2L9jig5.js'),true?__vite__mapDeps([]):void 0,import.meta.url)
   },
   {
     path: "/other",

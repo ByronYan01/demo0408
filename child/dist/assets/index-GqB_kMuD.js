@@ -126,20 +126,24 @@ const scriptRel = 'modulepreload';const assetsURL = function(dep, importerUrl) {
 };
 
 const routers = [
-  {
-    path: "/",
-    redirect: "home"
-  },
+  // {
+  //   path: "/",
+  //   redirect: "home"
+  // },
   {
     path: "/home",
-    component: () => __vitePreload(() => import('./index-25ou3ymN.js'),true?__vite__mapDeps([0,1,2]):void 0,import.meta.url),
-    redirect: "/home/test",
-    // redirect: "/supremeGPT/chat",
+    component: () => __vitePreload(() => import('./index-GMeYMSks.js'),true?__vite__mapDeps([0,1,2]):void 0,import.meta.url),
+    // redirect: "/home/test",
     children: [
       {
         path: "test",
         name: "test",
         component: () => __vitePreload(() => import('./index-NcunEjAa.js'),true?__vite__mapDeps([]):void 0,import.meta.url)
+      },
+      {
+        path: "wordPreview",
+        name: "wordPreview",
+        component: () => __vitePreload(() => import('./PreviewDemo-qB5hdVCD.js'),true?__vite__mapDeps([3,4,5,6,1,7]):void 0,import.meta.url)
       }
     ]
   }
@@ -158,7 +162,7 @@ app.mount("#aiDemo");
 export { _export_sfc as _ };
 function __vite__mapDeps(indexes) {
   if (!__vite__mapDeps.viteFileDeps) {
-    __vite__mapDeps.viteFileDeps = ["./index-25ou3ymN.js","./vue-router-NfWjSH4I.js","./index-Q4jb2R5R.css"]
+    __vite__mapDeps.viteFileDeps = ["./index-GMeYMSks.js","./vue-router-NfWjSH4I.js","./index-Q4jb2R5R.css","./PreviewDemo-qB5hdVCD.js","./axios-_op_Y4Y8.js","./docx-preview-UhIjgJuz.js","./jszip-pARn4sNS.js","./PreviewDemo-jaiuQrsC.css"]
   }
   return indexes.map((i) => __vite__mapDeps.viteFileDeps[i])
 }
